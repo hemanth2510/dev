@@ -2,11 +2,10 @@ pipeline {
     agent any
 
     stages {
-
         stage('Clone') {
             steps {
-                git url: 'https://github.com/hemanth2510/dev.git
-'
+                git url: 'https://github.com/hemanth2510/dev.git',
+                    branch: 'main'
             }
         }
 
@@ -16,6 +15,5 @@ pipeline {
                 sh './script.sh'
             }
         }
-
     }
 }
